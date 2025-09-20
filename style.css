@@ -1,14 +1,14 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f8fb;
-    color: #1a1a1a;
-    line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f8fb;
+  color: #1a1a1a;
+  line-height: 1.6;
 }
 
 html, body {
@@ -19,87 +19,86 @@ html, body {
 
 /* Header styling (spj47) */
 header {
-    background-color: #0033a0; /* Boeing's blue (spj47) */
-    color: white;
-    padding: 20px 40px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #0033a0; /* Boeing's blue */
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 header p {
-    font-size: 1rem;
-    opacity: 0.85;
+  font-size: 1rem;
+  opacity: 0.85;
 }
 
 /* Navigation bar (spj47) */
 nav {
-    background-color: #002d72;
-    padding: 10px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    /* This part makes sure the nav bar stays at the top (spj47) */
-    position: sticky;
-    top: 0;
-    z-index: 9999;
+  background-color: #002d72;
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 .nav-links {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex: 1;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex: 1;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.2s ease;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: #cce6ff;
+  color: #cce6ff;
 }
 
 .nav-img {
-    height: 10px; 
-    width: 200px;
+  height: 10px;
+  width: 200px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.2s ease;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: #cce6ff;
+  color: #cce6ff;
 }
 
 /* Main content (spj47) */
 main {
-    padding: 40px;
-    max-width: 1200px;
-    margin: auto;
-    flex: 1; /* Makes sure that footer is always pushed to the bottom of the screen (spj47) */
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  flex: 1;
 }
 
 section {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 section h2 {
-    color: #0033a0;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
+  color: #0033a0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
 }
 
 /* Team Stuff (spj47) */
@@ -138,22 +137,22 @@ section h2 {
 
 /* For more important Text (spj47) */
 .pt2 {
-    color: #1a1a1a;
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-    line-height: 1.6;
+  color: #1a1a1a;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
-/* Used for Images of seperatate blocks of text from the main body i.e. Quotes (spj47) */
+/* Cards (quotes, images, etc.) (spj47)  */
 .card,
 .cardinert {
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
-    position: relative;
-    z-index: 1;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .card-link {
@@ -162,40 +161,39 @@ section h2 {
   display: inline-block;
 }
 
-/* Gives a little "pop-up" effect when you hover over a card (spj47) */
 .card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 /* Footer (spj47) */
 footer {
-    background-color: #001f4d;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 60px;
-    font-size: 0.9rem;
+  background-color: #001f4d;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+  font-size: 0.9rem;
 }
 
-/* Misc (spj47) */
+/* Images (spj47) */
 .buggy-img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Stuff for the support page to make it take up space (spj47) */
+/* Support Section (spj47) */
 .support-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 70vh; /* Big vertical space */
+  height: 70vh;
   text-align: center;
   gap: 20px;
 }
@@ -233,7 +231,7 @@ footer {
   outline: none;
 }
 
-/* Stuff for documents page (spj47) */
+/* Documents page (spj47) */
 .doc-card-horizontal {
   display: flex;
   align-items: center;
@@ -268,20 +266,59 @@ footer {
   background-color: #0055cc;
 }
 
-/* Used to stop the nav bar from getting stuck on cards (spj47) */
-/* I do not like this solution, but it works (spj47) */
+/* Keep nav bar from overlapping cards */
 .page-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Adjusts padding on small screens (spj47) */
+/* Everything below this is my attempt at getting the website to play nice with phones (spj47) */
 @media (max-width: 768px) {
+  main {
+    padding: 20px;
+  }
+
+  section h2 {
+    font-size: 1.4rem;
+  }
+
+  .pt2 {
+    font-size: 1rem;
+  }
+
+  .team-photo {
+    max-width: 120px;
+  }
+
+  .team-member {
+    padding: 10px;
+  }
+
+  .support-section h2 {
+    font-size: 2rem;
+  }
+
+  .support-section p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .gofundme-btn {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+  }
+
+  .buggy-img {
+    max-width: 100%;
+    height: auto;
+  }
+
   .doc-card-horizontal {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+    padding: 15px;
   }
 
   .file-icon {
@@ -291,5 +328,49 @@ footer {
 
   .download-btn {
     align-self: flex-end;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: unset;
+  }
+
+  .nav-img {
+    width: 150px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .support-section p {
+    font-size: 0.95rem;
+  }
+
+  .gofundme-btn {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+
+  .doc-card-horizontal {
+    padding: 10px;
+  }
+
+  .download-btn {
+    font-size: 0.9rem;
   }
 }
