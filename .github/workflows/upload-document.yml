@@ -1,0 +1,66 @@
+name: Upload Document and Update Page
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  upload:
+    # Only run when title matches exactly
+    if: github.event.issue.title == 'New Document Upload'
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Download attachments from issue
+        id: files
+        uses: dawidd6/action-download-files@v2
+        with:
+          issue_number: ${{ github.event.issue.number }}
+          path: uploaded_files
+
+      - name: Determine file name and extension
+        id: filedata
+        run: |
+          FILE=$(ls uploaded_files)
+          echo "file=$FILE" >> $GITHUB_OUTPUT
+          EXT="${FILE##*.}"
+          echo "ext=$EXT" >> $GITHUB_OUTPUT
+
+      - name: Move file into Documents folder
+        run: |
+          mv "uploaded_files/${{ steps.filedata.outputs.file }}" Documents/
+
+      - name: Insert new HTML block into Documents.html
+        run: |
+          BODY="${{ github.event.issue.body }}"
+          DOCNAME=$(echo "$BODY" | sed -n 's/.*Document Display Name: \(.*\)/\1/p')
+          DESC=$(echo "$BODY" | sed -n 's/.*Short Description: \(.*\)/\1/p')
+          DATE=$(date +"%m-%d-%Y")
+          FILE="${{ steps.filedata.outputs.file }}"
+          EXT="${{ steps.filedata.outputs.ext }}"
+
+          # Pick icon based on extension
+          if [ "$EXT" = "pdf" ]; then ICON="pdf.png";
+          elif [ "$EXT" = "docx" ]; then ICON="docx.png";
+          elif [ "$EXT" = "pptx" ]; then ICON="pptx.png";
+          elif [ "$EXT" = "xlsx" ]; then ICON="excel.png";
+          else ICON="file.png"; fi
+
+          # Create the block safely using EOF
+          cat << 'EOF' > new_block.txt
+        <div class="card doc-card-horizontal">
+          <img src="Images/Icons/ICON_REPLACE" alt="EXT_REPLACE File" class="file-icon">
+          <div class="doc-details">
+            <h3 class="doc-name">DOCNAME_REPLACE</h3>
+            <p class="doc-desc">DESC_REPLACE</p>
+            <p class="doc-date">Added: DATE_REPLACE</p>
+          </div>
+          <a href="Do
