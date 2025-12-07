@@ -17,80 +17,91 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Download attachments from issue
+      - name: Create upload folder
+        run: mkdir -p uploaded_files Documents
+
+      - name: Download attachments from issue body and comments
         id: download_attachments
         run: |
-          mkdir -p uploaded_files
+          # Save issue body
+          echo "${{ github.event.issue.body }}" > issue_body.json
 
-          # Get issue comments to extract attachments
+          # Extract URLs from issue body
+          echo "${{ github.event.issue.body }}" | grep -o 'https://[^"]*\.\(pdf\|docx\|pptx\|xlsx\|zip\|png\|jpg\|txt\)' > file_urls_body.txt || true
+
+          # Get issue comments
           curl -s \
             -H "Authorization: token $GITHUB_TOKEN" \
             "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${{ github.event.issue.number }}/comments" \
             > comments.json
 
-          # Extract URLs ending in common file extensions
-          cat comments.json | grep -o 'https://[^"]*\.\(pdf\|docx\|pptx\|xlsx\|zip\|png\|jpg\|txt\)' > file_urls.txt || true
+          # Extract URLs from comments
+          cat comments.json | grep -o 'https://[^"]*\.\(pdf\|docx\|pptx\|xlsx\|zip\|png\|jpg\|txt\)' > file_urls_comments.txt || true
+
+          # Combine URLs
+          cat file_urls_body.txt file_urls_comments.txt > file_urls.txt
 
           # Download each file
           while read URL; do
+            [ -z "$URL" ] && continue
             echo "Downloading $URL"
-            curl -L "$URL" -o "uploaded_files/$(basename $URL)"
+            curl -L "$URL" -o "uploaded_files/$(basename "$URL")"
           done < file_urls.txt
 
-      - name: Determine file name and extension
-        id: filedata
-        run: |
-          FILE=$(ls uploaded_files | head -n 1)
-          echo "file=$FILE" >> $GITHUB_OUTPUT
-          EXT="${FILE##*.}"
-          echo "ext=$EXT" >> $GITHUB_OUTPUT
-
-      - name: Move file into Documents folder
-        run: |
-          mkdir -p Documents
-          mv "uploaded_files/${{ steps.filedata.outputs.file }}" Documents/
-
-      - name: Insert new HTML block into Documents.html
+      - name: Insert each file into Documents
         run: |
           BODY="${{ github.event.issue.body }}"
           DOCNAME="$(echo "$BODY" | awk '/^## Document Display Name/{getline; print}')"
           DESC="$(echo "$BODY" | awk '/^## Short Description/{getline; print}')"
           DATE=$(date +"%m-%d-%Y")
-          FILE="${{ steps.filedata.outputs.file }}"
-          EXT="${{ steps.filedata.outputs.ext }}"
 
-          # Pick icon based on extension
-          if [ "$EXT" = "pdf" ]; then ICON="pdf.png";
-          elif [ "$EXT" = "docx" ]; then ICON="docx.png";
-          elif [ "$EXT" = "pptx" ]; then ICON="pptx.png";
-          elif [ "$EXT" = "xlsx" ]; then ICON="excel.png";
-          else ICON="file.png"; fi
+          for FILE in uploaded_files/*; do
+            [ -f "$FILE" ] || continue
+            BASENAME=$(basename "$FILE")
+            EXT="${BASENAME##*.}"
 
-          # Build HTML block
-          cat << EOF > new_block.txt
-          <div class="card doc-card-horizontal">
-          <img src="Images/Icons/$ICON" alt="$EXT File" class="file-icon">
-           <div class="doc-details">
-            <h3 class="doc-name">$DOCNAME</h3>
-            <p class="doc-desc">$DESC</p>
-            <p class="doc-date">Added: $DATE</p>
-           </div>
-           <a href="Documents/$FILE" download class="download-btn">Download</a>
+            # Pick icon based on extension
+            case "$EXT" in
+              pdf) ICON="pdf.png" ;;
+              docx) ICON="docx.png" ;;
+              pptx) ICON="pptx.png" ;;
+              xlsx) ICON="excel.png" ;;
+              zip) ICON="zip.png" ;;
+              png|jpg|jpeg) ICON="image.png" ;;
+              txt) ICON="txt.png" ;;
+              *) ICON="file.png" ;;
+            esac
+
+            # Move file into Documents folder
+            mv "$FILE" "Documents/$BASENAME"
+
+            # Build HTML block
+            cat << EOF > new_block.txt
+            <div class="card doc-card-horizontal">
+             <img src="Images/Icons/$ICON" alt="$EXT File" class="file-icon">
+             <div class="doc-details">
+              <h3 class="doc-name">$DOCNAME</h3>
+              <p class="doc-desc">$DESC</p>
+              <p class="doc-date">Added: $DATE</p>
+            </div>
+            <a href="Documents/$BASENAME" download class="download-btn">Download</a>
           </div>
           EOF
-          # Insert above IMPORTANT comment in Documents.html
-          sed -i "/IMPORTANT ---!!/r new_block.txt" Documents.html
+
+            # Insert **before** IMPORTANT comment
+            awk -v block="$(cat new_block.txt)" '/IMPORTANT ---!!/{print block}1' Documents.html > tmp.html && mv tmp.html Documents.html
+          done
 
       - name: Commit and push changes
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add .
-          git commit -m "Added document from issue #${{ github.event.issue.number }}"
+          git add Documents Documents.html
+          git commit -m "Added document(s) from issue #${{ github.event.issue.number }}"
           git push
 
       - name: Close issue
         uses: peter-evans/close-issue@v2
         with:
           issue-number: ${{ github.event.issue.number }}
-          comment: "Your document has been uploaded and added to the site!"
+          comment: "Your document(s) have been uploaded and added to the site!"
