@@ -91,6 +91,22 @@ main {
   flex: 1;
 }
 
+.home-intro {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+  flex-wrap: wrap;
+}
+
+.home-intro .pt2 {
+  flex: 1; 
+}
+
+.home-intro .Logo {
+  max-width: 150px;
+  height: auto;
+}
+
 section {
   margin-bottom: 40px;
 }
