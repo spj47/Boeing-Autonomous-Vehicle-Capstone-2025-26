@@ -10,32 +10,44 @@ permissions:
 
 jobs:
   upload:
-    # Only run when title matches exactly
     if: github.event.issue.title == 'New Document Upload'
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Download attachments from issue
-        id: files
-        uses: dawidd6/action-download-files@v2
-        with:
-          issue_number: ${{ github.event.issue.number }}
-          path: uploaded_files
+        id: download_attachments
+        run: |
+          mkdir -p uploaded_files
+
+          # Get issue comments to extract attachments
+          curl -s \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${{ github.event.issue.number }}/comments" \
+            > comments.json
+
+          # Extract URLs ending in common file extensions
+          cat comments.json | grep -o 'https://[^"]*\.\(pdf\|docx\|pptx\|xlsx\|zip\|png\|jpg\|txt\)' > file_urls.txt || true
+
+          # Download each file
+          while read URL; do
+            echo "Downloading $URL"
+            curl -L "$URL" -o "uploaded_files/$(basename $URL)"
+          done < file_urls.txt
 
       - name: Determine file name and extension
         id: filedata
         run: |
-          FILE=$(ls uploaded_files)
+          FILE=$(ls uploaded_files | head -n 1)
           echo "file=$FILE" >> $GITHUB_OUTPUT
           EXT="${FILE##*.}"
           echo "ext=$EXT" >> $GITHUB_OUTPUT
 
       - name: Move file into Documents folder
         run: |
+          mkdir -p Documents
           mv "uploaded_files/${{ steps.filedata.outputs.file }}" Documents/
 
       - name: Insert new HTML block into Documents.html
@@ -54,13 +66,31 @@ jobs:
           elif [ "$EXT" = "xlsx" ]; then ICON="excel.png";
           else ICON="file.png"; fi
 
-          # Create the block safely using EOF
-          cat << 'EOF' > new_block.txt
+          # Build HTML block
+          cat << EOF > new_block.txt
           <div class="card doc-card-horizontal">
-           <img src="Images/Icons/ICON_REPLACE" alt="EXT_REPLACE File" class="file-icon">
+          <img src="Images/Icons/$ICON" alt="$EXT File" class="file-icon">
            <div class="doc-details">
-             <h3 class="doc-name">DOCNAME_REPLACE</h3>
-             <p class="doc-desc">DESC_REPLACE</p>
-             <p class="doc-date">Added: DATE_REPLACE</p>
+            <h3 class="doc-name">$DOCNAME</h3>
+            <p class="doc-desc">$DESC</p>
+            <p class="doc-date">Added: $DATE</p>
            </div>
-          <a href="Do
+           <a href="Documents/$FILE" download class="download-btn">Download</a>
+          </div>
+          EOF
+          # Insert above IMPORTANT comment in Documents.html
+          sed -i "/IMPORTANT ---!!/r new_block.txt" Documents.html
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Added document from issue #${{ github.event.issue.number }}"
+          git push
+
+      - name: Close issue
+        uses: peter-evans/close-issue@v2
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          comment: "Your document has been uploaded and added to the site!"
