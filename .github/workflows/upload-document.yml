@@ -41,8 +41,8 @@ jobs:
       - name: Insert new HTML block into Documents.html
         run: |
           BODY="${{ github.event.issue.body }}"
-          DOCNAME=$(echo "$BODY" | sed -n 's/.*Document Display Name: \(.*\)/\1/p')
-          DESC=$(echo "$BODY" | sed -n 's/.*Short Description: \(.*\)/\1/p')
+          DOCNAME="$(echo "$BODY" | awk '/^## Document Display Name/{getline; print}')"
+          DESC="$(echo "$BODY" | awk '/^## Short Description/{getline; print}')"
           DATE=$(date +"%m-%d-%Y")
           FILE="${{ steps.filedata.outputs.file }}"
           EXT="${{ steps.filedata.outputs.ext }}"
@@ -56,11 +56,11 @@ jobs:
 
           # Create the block safely using EOF
           cat << 'EOF' > new_block.txt
-        <div class="card doc-card-horizontal">
-          <img src="Images/Icons/ICON_REPLACE" alt="EXT_REPLACE File" class="file-icon">
-          <div class="doc-details">
-            <h3 class="doc-name">DOCNAME_REPLACE</h3>
-            <p class="doc-desc">DESC_REPLACE</p>
-            <p class="doc-date">Added: DATE_REPLACE</p>
-          </div>
+          <div class="card doc-card-horizontal">
+           <img src="Images/Icons/ICON_REPLACE" alt="EXT_REPLACE File" class="file-icon">
+           <div class="doc-details">
+             <h3 class="doc-name">DOCNAME_REPLACE</h3>
+             <p class="doc-desc">DESC_REPLACE</p>
+             <p class="doc-date">Added: DATE_REPLACE</p>
+           </div>
           <a href="Do
