@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boeing Autonomous Capstone - Documents</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Images/logo.png" type="image/png">
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav class="navbar">
+        <a href="index.html">
+            <img src="Images/logo.png" alt="Capstone Logo" class="nav-logo">
+        </a>
+
+        <div class="nav-right" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="index.html#project">Project</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="Team.html">Team</a>
+            <a href="Documents.html">Documents</a>
+            <a href="Support.html" class="donate">Donate</a>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+    </nav>
+
+    <main>
+        <!-- TEAM -->
+        <section id="team" class="team-section">
+            <div class="team-column">
+                <h2>Mechanical Engineering</h2>
+                <div class="team-grid">
+                    <div class="team-card" data-member="selina">
+                        <img src="Images/Headshots/Selina.png">
+                        <h3>Selina Cozens</h3>
+                        <p class="role">Project Lead</p>
+                        <a>LinkedIn</a>
+                    </div>
+
+                    <div class="team-card" data-member="desirae">
+                        <img src="Images/Headshots/Desirae.png">
+                        <h3>Desirae Mangum</h3>
+                        <p class="role">Steering Subteam Lead</p>
+                        <a>LinkedIn</a>
+                    </div>
+
+                    <div class="team-card" data-member="natasha">
+                        <img src="Images/Headshots/Natasha.png">
+                        <h3>Natasa Peric</h3>
+                        <p class="role">Throttle Subteam Designer</p>
+                        <a>LinkedIn</a>
+                    </div>
+
+                    <div class="team-card" data-member="elise">
+                        <img src="Images/Headshots/Elise.png">
+                        <h3>Elise Chantegros</h3>
+                        <p class="role">Throttle Subteam Lead</p>
+                        <a>LinkedIn</a>
+                    </div>
+
+                    <div class="team-card" data-member="marek">
+                        <img src="Images/Headshots/Marek.png">
+                        <h3>Marek Lemieux</h3>
+                        <p class="role">Brake Subteam Lead</p>
+                        <a>LinkedIn</a>
+                    </div>
+
+                    <div class="team-card" data-member="jacob">
+                        <img src="Images/Headshots/Jacob.png">
+                        <h3>Jacob Keeland</h3>
+                        <p class="role">Brake Subteam Designer</p>
+                        <a>LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-column">
+                <h2>Electrical Engineering</h2>
+                <div class="team-grid">
+                <div class="team-card" data-member="seth">
+                    <img src="Images/Headshots/Seth.png">
+                    <h3>Seth Jones</h3>
+                    <p class="role">Electrical Engineering Lead</p>
+                    <a>LinkedIn</a>
+                </div>
+
+                <div class="team-card" data-member="dante">
+                    <img src="Images/Headshots/palmieri.dante headshot.jpg">
+                    <h3>Dante Palmieri</h3>
+                    <p class="role">Electromechanical Designer</p>
+                    <a>LinkedIn</a>
+                </div>
+
+                <div class="team-card" data-member="devon">
+                    <img src="Images/Headshots/DevonJamesAllan.jpg">
+                    <h3>Devon Allan</h3>
+                    <p class="role">Wiring Designer</p>
+                    <a>LinkedIn</a>
+                </div>
+
+                <div class="team-card" data-member="evan">
+                    <img src="Images/Headshots/Evan.jpg">
+                    <h3>Evan Hudak</h3>
+                    <p class="role">Software Designer</p>
+                    <a>LinkedIn</a>
+                </div>
+
+                <div class="team-card" data-member="lily">
+                    <img src="Images/Headshots/Lily.jpg">
+                    <h3>Lily Quintanar</h3>
+                    <p class="role">Sensor Designer</p>
+                    <a>LinkedIn</a>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="team-cta">
+            <h2>Support Our Team!</h2>
+            <a href="Support.html" class="team-cta-btn">Donate</a>
+        </div>
+    </main>
+
+    <!-- TEAM MODAL -->
+    <div id="teamBackdrop" class="modal-backdrop hidden"></div>
+    <div id="overlayBackdrop" class="overlay-backdrop hidden"></div>
+
+    <div id="teamModal" class="gallery-modal hidden">
+    <div class="gallery-modal-content">
+
+        <div class="gallery-modal-header">
+        <h2 id="teamName"></h2>
+        <button class="team-modal-close back-btn">← Back</button>
+        </div>
+
+        <img id="teamImg" style="width:150px; border-radius:50%; margin: 0 auto 20px;">
+
+        <div class="teamRoles">
+            <p id="teamRoleOne">Role One</p>
+            <span class="divider"></span>
+            <p id="teamRoleTwo">Role Two</p>
+        </div>
+
+
+        <a id="teamLinkedIn" target="_blank" style="text-align:center; display:block; margin-bottom:20px;">
+        LinkedIn
+        </a>
+
+        <p id="teamBio"></p>
+
+    </div>
+    </div>
+
+    <footer>
+        <p>© Northern Arizona University 2025-26</p>
+    </footer>
+
+    <script src="JS/team.js"></script>
+    <script src="JS/nav.js"></script>
+</body>
+</html>

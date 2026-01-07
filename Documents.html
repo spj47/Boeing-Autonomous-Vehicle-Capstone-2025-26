@@ -3,156 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boeing Autonomous Driving Capstone</title>
+  <title>Boeing Autonomous Capstone - Documents</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Images/logo.png" type="image/png">
 </head>
 <body>
-  <div class="page-wrapper">
-    <header>
-      <h1>Boeing Autonomous Driving Capstone</h1>
-    </header>
-    
-    <nav>
-      <img src="Images/Arrow2.png" alt="Left Logo" class="nav-img">
-      <div class="nav-links">
+
+ <!-- Loading Spinner -->
+  <div id="loadingSpinner" class="loading-spinner hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- NAV BAR -->
+  <nav class="navbar">
+    <a href="index.html">
+        <img src="Images/logo.png" alt="Capstone Logo" class="nav-logo">
+    </a>
+
+    <div class="nav-right" id="navMenu">
         <a href="index.html">Home</a>
         <a href="index.html#project">Project</a>
-        <a href="index.html#team">Team</a>
         <a href="index.html#gallery">Gallery</a>
+        <a href="Team.html">Team</a>
         <a href="Documents.html">Documents</a>
-        <a href="Support.html">Support</a>
-      </div>
-      <img src="Images/Arrow.png" alt="Right Logo" class="nav-img">
-    </nav>
-    
-    <main>
-      <h2>Documents</h2>
+        <a href="Support.html" class="donate">Donate</a>
+    </div>
 
-      <section class="documents-list">
-        <div class="card doc-card-horizontal">
-          <img src="Images/Icons/pptx.png" alt="PowerPoint File" class="file-icon">
-          <div class="doc-details">
-            <h3 class="doc-name">Project Presentation</h3>
-            <p class="doc-desc">Report of the autonomous driving project.</p>
-            <p class="doc-date">Added: 09-18-2025</p>
-          </div>
-          <a href="Documents/Boeing_Autonomous_Presentation_1.pptx" download class="download-btn">Download</a>
-        </div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+    </button>
+  </nav>
 
-        <div class="card doc-card-horizontal">
-          <img src="Images/Icons/docx.png" alt="Word File" class="file-icon">
-          <div class="doc-details">
-            <h3 class="doc-name">Team Charter</h3>
-            <p class="doc-desc">Outline of responsibilities for project.</p>
-            <p class="doc-date">Added: 09-19-2025</p>
-          </div>
-          <a href="Documents/Finalization of Team Charter.docx" download class="download-btn">Download</a>
-        </div>
+<!-- Overlay Backdrop -->
+<div id="overlayBackdrop" class="overlay-backdrop hidden"></div>
 
-	<div class="card doc-card-horizontal">
-          <img src="Images/Icons/docx.png" alt="DOCTYPE File" class="file-icon">
-          <div class="doc-details">
-            <h3 class="doc-name">Boeing_Autonomous_All_Files</h3>
-            <p class="doc-desc">All-Files</p>
-            <p class="doc-date">Added: 12-6-25</p>
-          </div>
-          <a href="Documents/Boeing_Autonomous_All_Files.docx" download class="download-btn">Download</a>
-        </div>
+<!-- DOCUMENTS  -->
+<section id="documents" class="documents-section">
+  <h1>Project Documents</h1>
+  <div class="docs-grid" id="docsGrid"></div>
+</section>
 
-	<div class="card doc-card-horizontal">
-          <img src="Images/Icons/docx.png" alt="DOCTYPE File" class="file-icon">
-          <div class="doc-details">
-            <h3 class="doc-name">Boeing_Autonomous_Drawing_Files</h3>
-            <p class="doc-desc">Drawing-Files</p>
-            <p class="doc-date">Added: 12-6-25</p>
-          </div>
-          <a href="Documents/Boeing_Autonomous_Drawing_Files.docx" download class="download-btn">Download</a>
-        </div>
-	
-	      <div class="card doc-card-horizontal">
-          <img src="Images/Icons/excel.png" alt="DOCTYPE File" class="file-icon">
-          <div class="doc-details">
-            <h3 class="doc-name">Bill of Materials</h3>
-            <p class="doc-desc">Bill</p>
-            <p class="doc-date">Added: 12-6-25</p>
-          </div>
-          <a href="Documents/Boeing_Autonomous_Bill_of_Materials.xlsx" download class="download-btn">Download</a>
-        </div>
-
-        <div class="card doc-card-horizontal">
-          <img src="Images/Icons/zip.png" alt="DOCTYPE File" class="file-icon">
-          <div class="doc-details">
-            <h3 class="doc-name">Semester One Admin Documents</h3>
-            <p class="doc-desc">All Administration related documents that were made in semester one</p>
-            <p class="doc-date">Added: 12-6-25</p>
-          </div>
-          <a href="Documents/AdminDocuments.zip" download class="download-btn">Download</a>
-        </div>
-
-        <div class="card doc-card-horizontal">
-          <img src="Images/Icons/zip.png" alt="DOCTYPE File" class="file-icon">
-          <div class="doc-details">
-            <h3 class="doc-name">Semester One Logo Documents</h3>
-            <p class="doc-desc">All Logo related documents that were made in semester one</p>
-            <p class="doc-date">Added: 12-6-25</p>
-          </div>
-          <a href="Documents/Capstone Logo.zip" download class="download-btn">Download</a>
-        </div>
-
-        <div class="card doc-card-horizontal">
-          <img src="Images/Icons/zip.png" alt="DOCTYPE File" class="file-icon">
-          <div class="doc-details">
-            <h3 class="doc-name">Semester One Brakes Documents</h3>
-            <p class="doc-desc">All Brakes related documents that were made in semester one</p>
-            <p class="doc-date">Added: 12-6-25</p>
-          </div>
-          <a href="Documents/Brakes Deliverables.zip" download class="download-btn">Download</a>
-        </div>
-
-        <div class="card doc-card-horizontal">
-          <img src="Images/Icons/zip.png" alt="DOCTYPE File" class="file-icon">
-          <div class="doc-details">
-            <h3 class="doc-name">Semester One Throttle Documents</h3>
-            <p class="doc-desc">All Throttle related documents that were made in semester one</p>
-            <p class="doc-date">Added: 12-6-25</p>
-          </div>
-          <a href="Documents/Throttle Deliverables.zip" download class="download-btn">Download</a>
-        </div>
-
-        <div class="card doc-card-horizontal">
-          <img src="Images/Icons/zip.png" alt="DOCTYPE File" class="file-icon">
-          <div class="doc-details">
-            <h3 class="doc-name">Semester One Steering Documents</h3>
-            <p class="doc-desc">All Steering related documents that were made in semester one</p>
-            <p class="doc-date">Added: 12-6-25</p>
-          </div>
-          <a href="Documents/Steering Deliverables.zip" download class="download-btn">Download</a>
-        </div>
-
-        <!--             ((((!!--- IMPORTANT ---!!))))                 -->
-        <!-- new documents go here; See below for instructions (spj47) -->
-        <!-- 1) Add you document to the Documents folder -->
-        <!-- 2) Copy and paste this:
-        
-        <div class="card doc-card-horizontal">
-          <img src="Images/Icons/DOCTYPE(pptx, docx, pdf).png" alt="DOCTYPE File" class="file-icon">
-          <div class="doc-details">
-            <h3 class="doc-name">DOCUMENT NAME</h3>
-            <p class="doc-desc">DOCUMENT DESC</p>
-            <p class="doc-date">Added: MONTH-DAY-YEAR</p>
-          </div>
-          <a href="Documents/DOCUMENT NAME" download class="download-btn">Download</a>
-        </div>
-
-        -->
-        <!-- 3) Replace all words that are in all caps with your data -->
-        
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; Northern Arizona University 2025-26</p>
-    </footer>
+<!-- OVERLAY PANEL -->
+<div id="overlayPanel" class="overlay hidden">
+  <div class="overlay-content">
+    <div class="overlay-header">
+      <h2 id="overlayTitle"></h2>
+      <button id="overlayClose">← Back</button>
+    </div>
+    <div id="overlayDocs" class="overlay-docs"></div>
   </div>
+</div>
+
+
+<footer>
+      <p>© Northern Arizona University 2025-26</p>
+</footer>
+
+
+<script src="JS/documents.js"></script>
+<script src="JS/nav.js"></script>
+
+
 </body>
 </html>

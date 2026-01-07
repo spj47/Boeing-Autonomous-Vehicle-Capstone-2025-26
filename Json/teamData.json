@@ -1,0 +1,90 @@
+{
+  "selina": {
+    "name": "Selina Cozens",
+    "roleone": "Project Lead",
+    "roletwo": "Steering Designer",
+    "img": "Images/Headshots/Selina.png",
+    "linkedin": "#",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "desirae": {
+    "name": "Desirae Mangum",
+    "roleone": "Steering Lead",
+    "roletwo": "Fundraiser Manager",
+    "img": "Images/Headshots/Desirae.png",
+    "linkedin": "https://www.linkedin.com/in/mangumdesirae",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+  },
+  "natasha": {
+    "name": "Natasa Peric",
+    "roleone": "Throttle Subteam Designer",
+    "roletwo": "Website Designer",
+    "img": "Images/Headshots/Natasha.png",
+    "linkedin": "#",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse."
+  },
+  "elise": {
+    "name": "Elise Chantegros",
+    "roleone": "Throttle Subteam Lead",
+    "roletwo": "Budget Manager",
+    "img": "Images/Headshots/Elise.png",
+    "linkedin": "#",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident."
+  },
+  "jacob": {
+    "name": "Jacob Keeland",
+    "roleone": "Brake Subteam Designer",
+    "roletwo": "Manufaturing Manager",
+    "img": "Images/Headshots/Jacob.png",
+    "linkedin": "#",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
+  },
+  "marek": {
+    "name": "Marek Lemieux",
+    "roleone": "Brakes Subteam Lead",
+    "roletwo": "Team CAD Mentor",
+    "img": "Images/Headshots/Marek.png",
+    "linkedin": "#",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur."
+  },
+  "seth": {
+    "name": "Seth Jones",
+    "roleone": "Electrical Engineering Lead",
+    "roletwo": "Website Lead",
+    "img": "Images/Headshots/Seth.png",
+    "linkedin": "https://www.linkedin.com/in/seth-jones-1211ba200/?trk=opento_sprofile_goalscard",
+    "bio": "As a student at Northern Arizona University, I am currently pursing degrees in both Electrical Engineering and Cybersecurity. I have a passion for cutting edge technology in autonomous systems and robotics. For my junior thesis, I focused on the development of drone based LIDAR for mapping geographic topology. The efforts of that project directly support the development of self-driving cars through LIDAR development and prolonged autonomous navigation. I’m always looking for new ways to bridge the gap between scientific theory and real-world engineering applications."
+  },
+  "dante": {
+    "name": "Dante Palmieri",
+    "roleone": "Electromechanical Lead",
+    "roletwo": "Software Designer",
+    "img": "Images/Headshots/palmieri.dante headshot.jpg",
+    "linkedin": "#",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis autem vel eum iure reprehenderit qui in ea voluptate."
+  },
+  "devon": {
+    "name": "Devon Allan",
+    "roleone": "Wiring Lead",
+    "roletwo": "Sensor Designer",
+    "img": "Images/Headshots/DevonJamesAllan.jpg",
+    "linkedin": "#",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At vero eos et accusamus et iusto odio dignissimos ducimus."
+  },
+  "evan": {
+    "name": "Evan Hudak",
+    "roleone": "Software Lead",
+    "roletwo": "Electromechanical Designer",
+    "img": "Images/Headshots/Evan.jpg",
+    "linkedin": "#",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et harum quidem rerum facilis est et expedita distinctio."
+  },
+  "lily": {
+    "name": "Lily Quintanar",
+    "roleone": "Sensor Lead",
+    "roletwo": "wiring Designer",
+    "img": "Images/Headshots/Lily.jpg",
+    "linkedin": "#",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio."
+  }
+}

@@ -3,69 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boeing Autonomous Driving Capstone</title>
+  <title>Support | Boeing Autonomous Capstone</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Images/logo.png" type="image/png">
 </head>
 <body>
-  <div class="page-wrapper">
-    <header>
-      <h1>Boeing Autonomous Driving Capstone</h1>
-    </header>
-    
-    <nav>
-      <img src="Images/Arrow2.png" alt="Left Logo" class="nav-img">
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#project">Project</a>
-        <a href="index.html#team">Team</a>
-        <a href="index.html#gallery">Gallery</a>
-        <a href="Documents.html">Documents</a>
-        <a href="Support.html">Support</a>
-      </div>
-      <img src="Images/Arrow.png" alt="Right Logo" class="nav-img">
+
+<!-- NAV BAR -->
+  <nav class="navbar">
+        <a href="index.html">
+            <img src="Images/logo.png" alt="Capstone Logo" class="nav-logo">
+        </a>
+
+        <div class="nav-right" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="index.html#project">Project</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="Team.html">Team</a>
+            <a href="Documents.html">Documents</a>
+            <a href="Support.html" class="donate">Donate</a>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
     </nav>
 
-    <main>
-      <section class="support-section">
-        <h2>Support the Team</h2>
-        <p>This is the dedicated support page for my project.</p>
-        <a href="https://www.gofundme.com/f/nau-boeing-autonomous-capstone-fall-2025?attribution_id=sl:1c993e3a-a029-43d7-acce-a6e99866e219&lang=en_US&ts=1757975347&utm_campaign=man_sharesheet_dash&utm_content=amp13_t1-amp17_ta&utm_medium=customer&utm_source=copy_link" target="_blank" rel="noopener noreferrer" class="gofundme-btn">
-          Support Us on GoFundMe
-        </a>
-      </section>
+<!-- SUPPORT SECTION -->
+<section class="documents-section">
+  <h1>Support the Team</h1>
 
-      <!---- Fundraisers Section (spj47) ---->
-      <!-- Current Fundraisers (spj47) -->
-      <section id="gallery">
-        <h2>Upcoming Fundraisers</h2>
-        <div class="card">
-          <div class="gallery-grid">
-            <p> None Right now. Check back Later! </p>
-          </div>
-        </div>
-      </section>
+  <p style="max-width: 700px; font-size: 1.2rem; margin-bottom: 40px;">
+    This page is dedicated to supporting the Boeing Autonomous Driving Capstone team.
+  </p>
 
-      <section id="gallery">
-        <h2>Past Fundraisers</h2>
-        <div class="card">
-            <div class="gallery-grid">
-            <div class="gallery-item">
-              <img src="Images/Fundraisers/Fundraiser_Canes.png" alt="Fundraiser_Canes">
-            </div>
-            <div class="gallery-item">
-              <img src="Images/Fundraisers/Fundraiser_Chipotle.png" alt="Fundraiser_Chipotle">
-            </div>
-            <div class="gallery-item">
-              <img src="Images/Fundraisers/Fundraiser_Someburros.png" alt="Fundraiser_Someburros">
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+  <a
+    href="https://www.gofundme.com/f/nau-boeing-autonomous-capstone-fall-2025?attribution_id=sl:1c993e3a-a029-43d7-acce-a6e99866e219&lang=en_US"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="doc-card-section"
+    style="max-width: 420px;"
+  >
+    Support Us on GoFundMe
+    <span class="arrow">→</span>
+  </a>
+</section>
+
+<!-- UPCOMING FUNDRAISERS -->
+<section class="documents-section" style="background: white;">
+  <h1>Upcoming Fundraisers</h1>
+
+  <div class="docs-grid">
+    <div class="doc-card-section" style="background:#e0e6ef; color:#333; cursor:default;">
+      None right now — check back soon!
+    </div>
+  </div>
+</section>
 
     <footer>
-      <p>&copy; Northern Arizona University 2025-26</p>
+      <p>© Northern Arizona University 2025-26</p>
     </footer>
-  </div>
+<script src="JS/nav.js"></script>
 </body>
 </html>

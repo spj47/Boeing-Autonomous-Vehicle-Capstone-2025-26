@@ -1,255 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boeing Autonomous Driving Capstone</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-</head>
-<body>
-  <div class="page-wrapper">
-    <header>
-      <h1>Boeing Autonomous Driving Capstone</h1>
-    </header>
-    
-    <nav>
-      <img src="Images/Arrow2.png" alt="Left Logo" class="nav-img">
-      <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#project">Project</a>
-        <a href="#team">Team</a>
-        <a href="#gallery">Gallery</a>
-        <a href="Documents.html">Documents</a>
-        <a href="Support.html">Support</a>
-      </div>
-      <img src="Images/Arrow.png" alt="Right Logo" class="nav-img">
-    </nav>
-    
 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Boeing Autonomous Capstone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="Images/logo.png" type="image/png">
+  </head>
+
+  <body>
     <main>
+      <!-- NAV BAR -->
+      <nav class="navbar">
+        <a href="#home">
+          <img src="Images/logo.png" alt="Capstone Logo" class="nav-logo">
+        </a>
 
-      <!-- Home Section (spj47) -->
-      <section id="home">
-        <h2>Welcome</h2>
-        <div class="home-intro">
-          <p class="pt2">This is the Boeing Autonomous Driving Capstone project at Northern Arizona University.</p>
-          <img src="Images/CapstoneLogo.png" alt="Capstone Logo" class="Logo">
+        <div class="nav-right" id="navMenu">
+          <a href="#home">Home</a>
+          <a href="#project">Project</a>
+          <a href="#gallery">Gallery</a>
+          <a href="Team.html">Team</a>
+          <a href="Documents.html">Documents</a>
+          <a href="Support.html" class="donate">Donate</a>
         </div>
-      </section>
 
-      <hr>
-      <br>
-
-      <!-- Project Section (spj47) -->
-      <section id="project">
-        <h2>Project Description</h2>
-        <p class="pt2">This project focuses on integrating autonomous navigation and control systems into a stock buggy. The vehicle will be able to perform assigned tasks autonomously, while still supporting a manual drive mode.</p>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          ☰
+        </button>
+      </nav>
 
 
-        <h2>Sponsors and Stakeholders</h2>
-        <p class="pt2"><strong>Sponsor:</strong> Boeing</p>
-        <p class="pt2"><strong>Technical Support:</strong> Conner N. and Donald G.</p>
+      <!-- HERO -->
+      <div id="home"></div>
+      <section id="hero">
+        <canvas id="buggyCanvas"></canvas>
 
-        <h2>Importance</h2>
-        <p class="pt2">This project contributes to the future of transportation and advanced automation technology. The developed system is a stepping stone toward fully autonomous vehicle control in real-world applications.</p>
-
-        <h2>Buggy Vehicle</h2>
-        <div class="card">
-          <img src="Images/Buggy.webp" alt="Buggy vehicle used for automation project" class="buggy-img">
-          <p>The buggy used for this project serves as the test platform for implementing automated control.</p>
-        </div>
-      </section>
-
-      <hr>
-      <br>
-
-      <!-- Team Section (spj47) -->
-      <section id="team">
-        <h2>Our Team</h2>
-        <div class="cardinert"> <!-- Mechanical Engineers (spj47) -->
-          <h2>Mechanical Engineers</h2>
-          <div class="team-grid">
-            <div class="team-member card">
-              <img src="Images/Headshots/Selina.png" alt="Selina Cozens" class="team-photo">
-              <h3>Selina Cozens</h3>
-              <p>Project manager</p>
-              <p>Steering Subsystem - CAE</p>
-            </div>
-
-            <div class="team-member card">
-              <img src="Images/Headshots/Desirae.png" alt="Desirae Mangum" class="team-photo">
-              <h3>Desirae Mangum</h3>
-              <p>Fundraising Lead</p>
-              <p>Steering Subsystem - Primary Designer</p>
-              <a href="https://www.linkedin.com/in/mangumdesirae" target="_blank">LinkedIn</a>
-            </div>
-
-            <div class="team-member card">
-              <img src="Images/Headshots/Natasha.png" alt="Natasa Peric" class="team-photo">
-              <h3>Natasa Peric</h3>
-              <p>Throttle movement - Primary Designer</p>
-              <p>Computer-Aided Engineering Tool</p>
-            </div>
-
-            <div class="team-member card">
-              <img src="Images/Headshots/Elise.png" alt="Elise Chantegros" class="team-photo">
-              <h3>Elise Chantegros</h3>
-              <p>Budget liaison</p>
-              <p>Throttle response - Functions Designer</p>
-            </div>
-
-            <div class="team-member card">
-              <img src="Images/Headshots/Jacob.png" alt="Jacob Keeland" class="team-photo">
-              <h3>Jacob Keeland</h3>
-              <p>Manufacturing lead</p>
-              <p>Brake subsystem - CAE Tool</p>
-            </div>
-
-            <div class="team-member card">
-              <img src="Images/Headshots/Marek.png" alt="Marek Lemieux" class="team-photo">
-              <h3>Marek Lemieux</h3>
-              <p>Calculation Proofreader</p>
-              <p>Brake Subsystem - Primary Designer</p>
-            </div>
+        <div class="hero-content">
+          <h1>Boeing Autonomous</h1>
+          <p class="hero-tagline">
+            A multidisciplinary autonomous systems project sponsored by Boeing
+          </p>
+          <div class="hero-buttons">
+            <a href="#project">Project</a>
+            <a href="#gallery">Gallery</a>
+            <a href="Team.html">Team</a>
+            <button id="toggleGrid">Toggle LIDAR</button>
           </div>
         </div>
 
-        <br>
-
-        <div class="cardinert"> <!-- Electrical Engineers (spj47) -->
-          <h2>Electrical Engineers</h2>
-          <div class="team-grid">
-            <div class="team-member card">
-              <img src="Images/Headshots/Seth.png" alt="Seth Jones" class="team-photo">
-              <h3>Seth Jones</h3>
-              <p>Electrical Engineering Lead | Website Manager</p>
-              <p>Sensor Subsystem - Primary Designer</p>
-            </div>
-
-            <div class="team-member card">
-              <img src="Images/Headshots/palmieri.dante headshot.jpg" alt="Dante Palmieri" class="team-photo">
-              <h3>Dante Palmieri</h3>
-              <p>Electrical Engineering Support</p>
-              <p>Processing Subsystem - Primary Designer</p>
-            </div>
-
-            <div class="team-member card">
-              <img src="Images/Headshots/DevonJamesAllan.jpg" alt="Devon Allan" class="team-photo">
-              <h3>Devon Allan</h3>
-              <p>Electrical Engineering Support</p>
-              <p>Wiring - Primary Designer</p>
-            </div>
-
-            <div class="team-member card">
-              <img src="Images/Headshots/Evan.jpg" alt="Evan Hudak" class="team-photo">
-              <h3>Evan Hudak</h3>
-              <p>Electrical Engineering Support</p>
-              <p>ElectroMechanical - Primary Designer</p>
-            </div>
-
-            <div class="team-member card">
-              <img src="Images/Headshots/Lily.jpg" alt="Lily Quintanar" class="team-photo">
-              <h3>Lily Quintanar</h3>
-              <p>Electrical Engineering Support</p>
-              <p>ElectroMechanical - Support</p>
-            </div>
-          </div>
-        </div>
+        <p class="click-prompt">Click anywhere on the road to move the buggy!</p>
       </section>
 
-      <hr>
-      <br>
 
-<!-- Gallery Section (spj47) -->
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="card">
-      <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="Images/Gallery/boeing_team_amanda.jpeg" alt="Boeing Team with Amanda">
-        <p class="caption">Boeing Team with Amanda</p>
-      </div>
-      
-    <div class="gallery-item">
-        <img src="Images/Gallery/Devon_Buggy.png" alt="Devon with Buggy">
-        <p class="caption">Devon with Buggy</p>
-      </div>
+      <!-- PROJECT -->
+      <section id="project" class="project-section">
+        <div class="project-left fade-in">
+          <h2>Project Description</h2>
+          <p>
+            This capstone project converts a stock utility buggy into an autonomous vehicle
+            capable of navigating environments and executing control tasks. Mechanical,
+            electrical, and software subsystems are integrated while preserving manual control.
+          </p>
+        </div>
 
-      <div class="gallery-item">
-        <img src="Images/Gallery/ControlSystem_Brakes.svg" alt="Control System – Brakes">
-        <p class="caption">Control System - Brakes</p>
-      </div>
+        <div class="project-right fade-in">
+          <h3>Sponsors & Stakeholders</h3>
+          <ul>
+            <li><strong>Sponsor:</strong> Boeing</li>
+            <li><strong>Boeing Advisors:</strong> Conner N., Donald G.</li>
+            <li><strong>Institution:</strong> Northern Arizona University</li>
+          </ul>
+        </div>
 
-      <div class="gallery-item">
-        <img src="Images/Gallery/ControlSystem_Steering.svg" alt="Control System – Steering">
-        <p class="caption">Control System - Steering</p>
-      </div>
+      </section>
 
-      <div class="gallery-item">
-        <img src="Images/Gallery/ControlSystem_Throttle.svg" alt="Control System – Throttle">
-        <p class="caption">Control System - Throttle</p>
-      </div>
+      <!-- GALLERY -->
+      <section id="gallery" class="gallery-section">
 
-       <div class="gallery-item">
-        <img src="Images/Gallery/ConceptArt.png" alt="Early Concept for Navigation Model">
-        <p class="caption">Early Concept for Navigation Model</p>
-      </div>
+        <div class="gallery-column">
+          <button class="gallery-btn brakes" data-gallery="brakes">
+            <span>Brakes</span>
+          </button>
 
-	<div class="gallery-item">
-        <img src="Images/Gallery/Prototype2_ME/brakes_protoype2_assembly.jpg" alt="Brakes Prototyping Assembly">
-        <p class="caption">Brakes Prototyping Assembly</p>
-      </div>
+          <button class="gallery-btn steering" data-gallery="steering">
+            <span>Steering</span>
+          </button>
 
-<div class="gallery-item">
-        <img src="Images/Gallery/Prototype2_ME/brakes_prototype2_spool.jpg" alt="Brakes Prototyping Spool Part">
-        <p class="caption">Brakes Prototyping Spool Part</p>
-      </div>
+          <button class="gallery-btn throttle" data-gallery="throttle">
+            <span>Throttle</span>
+          </button>
+        </div>
 
+        <div class="gallery-center">
+          <img src="Images/Ribbon.webp" alt="Ribbon">
+        </div>
 
-<div class="gallery-item">
-        <img src="Images/Gallery/Prototype2_ME/steering_subassembly2.jpg" alt="Steering Prototype 2 Assembly">
-        <p class="caption">Steering Prototype 2 Assembly</p>
-      </div>
-      
-      <div class="gallery-item">
-        <img src="Images/Gallery/Prototype2_ME/assembly_steering3.jpg" alt="Steering Prototype 2 Assembly 2">
-        <p class="caption">Steering Prototype 2 Assembly 2</p>
-      </div>
+        <div class="gallery-column">
+          <button class="gallery-btn sensors" data-gallery="sensors">
+            <span>Sensors</span>
+          </button>
 
-<div class="gallery-item">
-        <img src="Images/Gallery/Prototype2_ME/steering_motor_box.jpg" alt="Steering Prototype 2 Motor Box">
-        <p class="caption">Steering Prototype 2 Motor Box</p>
-      </div>
+          <button class="gallery-btn navigation" data-gallery="navigation">
+            <span>Navigation</span>
+          </button>
 
-<div class="gallery-item">
-        <img src="Images/Gallery/Prototype2_ME/throttle_full_assembly_1.jpg" alt="Throttle Prototype 2 Lever Mechanism">
-        <p class="caption">Throttle Prototype 2 Lever Mechanism</p>
-      </div>
+          <button class="gallery-btn electrical design" data-gallery="wiring">
+            <span>Electrical Design</span>
+          </button>
+        </div>
 
-<div class="gallery-item">
-        <img src="Images/Gallery/Prototype2_ME/throttle_full_assembly2.jpg" alt="Throttle Prototype 2 Pedal Mechanism">
-        <p class="caption">Throttle Prototype 2 Pedal Mechanism</p>
-      </div>
+      </section>
 
 
-    </div>
-  </div>
-</section>
-
-
-
+      <!-- TEAM CTA -->
+      <section class="team-cta">
+        <h2 class="fade-in" >Meet the Team</h2>
+        <p class="fade-in">
+          Learn more about the multidisciplinary engineering team behind the
+          Boeing Autonomous Capstone project.
+        </p>
+        <a href="Team.html" class="team-cta-btn fade-in">View Team</a>
+      </section>
     </main>
 
+    <!-- GALLERY MODAL -->
+    <div id="overlayBackdrop" class="overlay-backdrop hidden"></div>
+
+    <div id="galleryModal" class="gallery-modal hidden">
+      <div class="gallery-modal-content">
+
+        <div class="gallery-modal-header">
+          <div>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription" class="modal-description"></p>
+          </div>
+          <button id="closeGallery" class="back-btn">← Back</button>
+        </div>
+
+
+        <div class="gallery-carousel">
+          <button class="carousel-btn left" id="prevImg">←</button>
+
+          <div class="carousel-images-wrapper">
+            <img id="prevImage" class="carousel-image" alt="Previous Image">
+            <img id="carouselImage" class="carousel-image" alt="Current Image">
+            <img id="nextImage" class="carousel-image" alt="Next Image">
+          </div>
+
+          <button class="carousel-btn right" id="nextImg">→</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner hidden">
+      <div class="spinner"></div>
+    </div>
+
     <footer>
-      <p>&copy; Northern Arizona University 2025-26</p>
+      <p>© Northern Arizona University 2025-26</p>
+      <a href="#home"> <p>Back To Top</p> </a>
     </footer>
 
-    <script src="script.js"></script>
-  </div>
-</body>
+    <script src="JS/hero.js"></script>
+    <script src="JS/gallery.js"></script>
+    <script src="JS/nav.js"></script>
+    <script src="JS/ScrollFade.js"></script>
+  </body>
+
 </html>
