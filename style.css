@@ -92,7 +92,6 @@ html {
   z-index: 1;
 }
 
-/* --- Logo --- */
 /* Navbar capstone logo */
 .nav-logo {
   height: 45px;
@@ -117,7 +116,9 @@ html {
   outline: none;
 }
 
-.nav-right .donate {
+.donate {
+  color: var(--color-white);
+  text-decoration: none;
   margin-left: var(--space-md);
   padding: 0.5rem 1.2rem;
   background: var(--color-accent);
@@ -126,8 +127,9 @@ html {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.nav-right .donate:hover,
-.nav-right .donate:focus {
+.donate:hover,
+.donate:focus {
+  color: var(--color-dark);
   background: var(--color-accent-hover);
   transform: translateY(-2px);
   outline: none;
@@ -153,31 +155,32 @@ html {
     display: block;
   }
 
+  /* Little crude, but moves it from the right to the left to make more sense*/
   .nav-right {
     position: fixed;
     top: var(--navbar-height-mobile);
-    right: -100%;
+    left: -100%;
     width: 60%;
     height: calc(100vh - var(--navbar-height-mobile));
     background: var(--color-primary);
     flex-direction: column;
     padding: var(--space-lg);
     gap: var(--space-md);
-    transition: right 0.3s ease;
+    transition: left 0.3s ease;
     z-index: 1001;
   }
 
   .nav-right.active {
-    right: 0;
+    left: 0;
   }
 
   .nav-right a {
     font-size: 1.2rem;
   }
 
-  .nav-right .donate {
-    margin-left: 0;
-    padding: 0.8rem 1.25rem;
+  /* Pusedo keeps the logo in the center.. not perfect */
+  .nav-logo {
+    padding-left: 75%;
   }
 }
 

@@ -1,7 +1,7 @@
 /*-- DOM Elements --*/
-const navbar = document.querySelector(".navbar");
-const navToggle = document.querySelector(".nav-toggle");
-const navMenu = document.querySelector(".nav-right");
+let navbar;
+let navToggle;
+let navMenu;
 
 /*-- Navbar Shadow on Scroll --*/
 function handleScroll() {
@@ -25,9 +25,21 @@ function initMobileMenu() {
 
 /*-- Initialization --*/
 function initNavbar() {
+  navbar = document.querySelector(".navbar");
+  navToggle = document.querySelector(".nav-toggle");
+  navMenu = document.querySelector(".nav-right");
+
   initScrollShadow();
   initMobileMenu();
 }
 
-/*-- Init --*/
-initNavbar();
+
+/*-- Place Navbar in DOC --*/
+fetch("HTML_Utilities/nav.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar-wrapper").innerHTML = data;
+
+    // Init the Navbar
+    initNavbar();
+  });
