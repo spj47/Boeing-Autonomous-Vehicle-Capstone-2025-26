@@ -3,11 +3,25 @@ const canvas = document.getElementById("buggyCanvas");
 const ctx = canvas.getContext("2d");
 
 /* -- OBSTACLES -- */
+// Fixed obstacles that always show up no matter the random generation
 const obstacles = [
-  { x: 0, y: 0, w: 0, h: 0 }, // fixed obstacle
+  { x: 50, y: 150, w: 100, h: 100 },
+  { x: 300, y: 150, w: 100, h: 200 },
+  { x: 80, y: 350, w: 150, h: 200 }, 
 ];
 
 function getHeroObstacle() {
+  // Don't draw obstacles for mobile since it is too much
+  if (canvas.width < 600)
+  {
+    return {
+      x: 0,
+      y: 0,
+      w: 0,
+      h: 0
+    };
+  }
+
   const hero = document.querySelector('.hero-content');
   const rect = hero.getBoundingClientRect();
 
@@ -599,10 +613,6 @@ function aStar(start, end) {
         path.push(grid[y][x]);
         cKey = cameFrom[cKey];
       }
-
-      // Debugging the visited nodes
-      debugvisted = open;
-
       return path.reverse();
     }
 

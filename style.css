@@ -318,6 +318,10 @@ html {
     max-width: unset;
     padding: 1.875rem 1.25rem;
   }
+
+  .click-prompt {
+    top: 75%;
+  }
 }
 
 /* Tablet screens */
@@ -404,10 +408,6 @@ html {
 @media (max-width: 768px) {
   .project-right ul li {
     padding-left: 1rem; /* slightly smaller indent */
-  }
-
-  .click-prompt {
-    display: none;
   }
 }
 
