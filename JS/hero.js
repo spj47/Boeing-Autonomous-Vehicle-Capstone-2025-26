@@ -774,7 +774,7 @@ function drawBuggy() {
   ctx.fill();
 
   // Blue semi-circle that spins around the center
-  ctx.fillStyle = "rgba(0, 0, 255, 0.5)";
+  ctx.fillStyle = "rgb(0, 0, 255)";
   ctx.beginPath();
   const currentLidarAngle = lidarAngleOffset;
   ctx.arc(0, 0, 5, -Math.PI / 2 + currentLidarAngle, Math.PI / 2 + currentLidarAngle);  // Semi-circle arc
