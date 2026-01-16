@@ -11,6 +11,8 @@ const overlayClose = document.getElementById("overlayClose");
 const overlayBackdrop = document.getElementById("overlayBackdrop");
 const loadingSpinner = document.getElementById("loadingSpinner");
 const docsGrid = document.getElementById("docsGrid");
+const serverWarning = document.getElementById("serverWarning");
+const loadFailed = document.getElementById("loadFailed");
 
 /*-- Spinner Logic --*/
 function showSpinner() {
@@ -148,14 +150,15 @@ function closeOverlay() {
   }, 400);
 }
 
-/*-- Data Fetch --*/
-async function fetchDocumentsData() {
+/*-- Fallback fetch if google script cannot be used --*/
+async function fetchDocumentsFromLocalFolder() {
   try {
     showSpinner();
 
-    const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbz0aEzT4UXX9ZYukToveurjYK4rt4sptZ8NIyypu6U5mPfKsE2OKrfPKTnXPEKEfmKG/exec"
-    );
+    const response = await fetch("documents_output.json");
+
+    if (!response.ok) throw new Error("Local JSON fetch failed");
+
     const json = await response.json();
 
     folderTree = {};
@@ -172,13 +175,59 @@ async function fetchDocumentsData() {
       });
     });
 
+    console.info("Loaded documents from local JSON");
+  } catch (error) {
+    console.error("Failed to load local JSON", error);
+    throw error; // propagate to fallback handler
+  } finally {
     hideSpinner();
-    // Added here to avoid letting the user close the backdrop while spinner was showing
+  }
+}
+
+
+
+/*-- Data Fetch --*/
+async function fetchDocumentsData() {
+  try {
+    showSpinner();
+
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbz0aEzT4UXX9ZYukToveurjYK4rt4sptZ8NIyypu6U5mPfKsE2OKrfPKTnXPEKEfmKG/exec"
+    );
+
+    if (!response.ok) throw new Error("Server fetch failed");
+
+    const json = await response.json();
+
+    folderTree = {};
+    json.data.forEach(section => {
+      section.files.forEach(file => {
+        addToTree(section.section, {
+          name: file.documentName || file.name,
+          desc: file.desc,
+          date: file.date,
+          type: file.type,
+          link: file.link,
+          path: section.section
+        });
+      });
+    });
+
+    console.info("Loaded documents from server");
+
+  } catch (error) {
+    console.error("Server failed, falling back to local Documents", error);
+    try {
+      await fetchDocumentsFromLocalFolder();
+      serverWarning.classList.remove("hidden");
+    } catch (fallbackError) {
+      console.error("Local Documents fallback failed", fallbackError);
+      loadFailed.classList.remove("hidden");
+    }
+  } finally {
+    hideSpinner();
     overlayBackdrop.addEventListener("click", closeOverlay);
     renderTopLevelCards();
-  } catch (error) {
-    console.error("Error fetching documents:", error);
-    hideSpinner();
   }
 }
 

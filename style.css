@@ -44,6 +44,12 @@ html {
   --navbar-height-mobile: 60px;
 }
 
+/* ======================= GENERAL UTILITY ======================= */
+
+.hidden {
+  display: none;
+}
+
 /* ======================= NAVBAR ======================= */
 /* --- Base --- */
 .navbar {
