@@ -183,11 +183,6 @@ html {
   .nav-right a {
     font-size: 1.2rem;
   }
-
-  /* Pusedo keeps the logo in the center.. not perfect */
-  .nav-logo {
-    padding-left: 75%;
-  }
 }
 
 /* ======================= HERO ======================= */
