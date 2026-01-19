@@ -4,7 +4,7 @@
     "roleone": "Project Lead",
     "roletwo": "Steering Designer",
     "img": "Images/Headshots/Selina.png",
-    "linkedin": "#",
+    "linkedin": "https://www.linkedin.com/in/selinacozens/",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   "desirae": {
@@ -20,7 +20,7 @@
     "roleone": "Throttle Subteam Designer",
     "roletwo": "Website Designer",
     "img": "Images/Headshots/Natasha.png",
-    "linkedin": "#",
+    "linkedin": "www.linkedin.com/in/natasa-peric-4396ab268",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse."
   },
   "elise": {
@@ -36,7 +36,7 @@
     "roleone": "Brake Subteam Designer",
     "roletwo": "Manufaturing Manager",
     "img": "Images/Headshots/Jacob.png",
-    "linkedin": "#",
+    "linkedin": "https://www.linkedin.com/in/jacob-keeland/",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
   },
   "marek": {
@@ -60,7 +60,7 @@
     "roleone": "Electromechanical Lead",
     "roletwo": "Software Designer",
     "img": "Images/Headshots/palmieri.dante headshot.jpg",
-    "linkedin": "#",
+    "linkedin": "https://www.linkedin.com/in/dante-palmieri/",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis autem vel eum iure reprehenderit qui in ea voluptate."
   },
   "devon": {
@@ -68,7 +68,7 @@
     "roleone": "Wiring Lead",
     "roletwo": "Sensor Designer",
     "img": "Images/Headshots/DevonJamesAllan.jpg",
-    "linkedin": "#",
+    "linkedin": "https://www.linkedin.com/in/devon-allan-ba3774236/",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At vero eos et accusamus et iusto odio dignissimos ducimus."
   },
   "evan": {
@@ -76,15 +76,15 @@
     "roleone": "Software Lead",
     "roletwo": "Electromechanical Designer",
     "img": "Images/Headshots/Evan.jpg",
-    "linkedin": "#",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et harum quidem rerum facilis est et expedita distinctio."
+    "linkedin": "https://www.linkedin.com/in/evanhudak/",
+    "bio": "Hi, I am Dante Palmieri and I am a Computer Engineering major at NAU. My role on the team is helping to integrate hardware and software interfaces for our buggy."
   },
   "lily": {
     "name": "Lily Quintanar",
     "roleone": "Sensor Lead",
     "roletwo": "wiring Designer",
     "img": "Images/Headshots/Lily.jpg",
-    "linkedin": "#",
+    "linkedin": "https://www.linkedin.com/in/lily-quintanar-6461aa3a7/",
     "bio": "Hi my name is Lily Quintanar. I am studying multidisciplinary engineering with an emphasis in audio engineering and am also pursuing a minor in mathematics. I have taken many electrical engineering courses and am passionate about the creativity of engineering and the intersection it has with the arts, specifically with music and sound. I have enjoyed being challenged by the technical aspects of this project and am looking forward to applying these skills to future endeavors."
   }
 }
