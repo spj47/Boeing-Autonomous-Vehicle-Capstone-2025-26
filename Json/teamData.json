@@ -5,7 +5,7 @@
     "roletwo": "Steering Designer",
     "img": "Images/Headshots/Selina.png",
     "linkedin": "https://www.linkedin.com/in/selinacozens/",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "bio": ""
   },
   "desirae": {
     "name": "Desirae Mangum",
@@ -13,7 +13,7 @@
     "roletwo": "Fundraiser Manager",
     "img": "Images/Headshots/Desirae.png",
     "linkedin": "https://www.linkedin.com/in/mangumdesirae",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+    "bio": ""
   },
   "natasha": {
     "name": "Natasa Peric",
@@ -21,7 +21,7 @@
     "roletwo": "Website Designer",
     "img": "Images/Headshots/Natasha.png",
     "linkedin": "www.linkedin.com/in/natasa-peric-4396ab268",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse."
+    "bio": ""
   },
   "elise": {
     "name": "Elise Chantegros",
@@ -29,7 +29,7 @@
     "roletwo": "Budget Manager",
     "img": "Images/Headshots/Elise.png",
     "linkedin": "#",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident."
+    "bio": ""
   },
   "jacob": {
     "name": "Jacob Keeland",
@@ -37,7 +37,7 @@
     "roletwo": "Manufaturing Manager",
     "img": "Images/Headshots/Jacob.png",
     "linkedin": "https://www.linkedin.com/in/jacob-keeland/",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
+    "bio": ""
   },
   "marek": {
     "name": "Marek Lemieux",
@@ -45,7 +45,7 @@
     "roletwo": "Team CAD Mentor",
     "img": "Images/Headshots/Marek.png",
     "linkedin": "#",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur."
+    "bio": ""
   },
   "seth": {
     "name": "Seth Jones",
@@ -61,7 +61,7 @@
     "roletwo": "Software Designer",
     "img": "Images/Headshots/palmieri.dante headshot.jpg",
     "linkedin": "https://www.linkedin.com/in/dante-palmieri/",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis autem vel eum iure reprehenderit qui in ea voluptate."
+    "bio": "Hi, I am Dante Palmieri and I am a Computer Engineering major at NAU. My role on the team is helping to integrate hardware and software interfaces for our buggy."
   },
   "devon": {
     "name": "Devon Allan",
@@ -69,7 +69,7 @@
     "roletwo": "Sensor Designer",
     "img": "Images/Headshots/DevonJamesAllan.jpg",
     "linkedin": "https://www.linkedin.com/in/devon-allan-ba3774236/",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At vero eos et accusamus et iusto odio dignissimos ducimus."
+    "bio": ""
   },
   "evan": {
     "name": "Evan Hudak",
@@ -77,7 +77,7 @@
     "roletwo": "Electromechanical Designer",
     "img": "Images/Headshots/Evan.jpg",
     "linkedin": "https://www.linkedin.com/in/evanhudak/",
-    "bio": "Hi, I am Dante Palmieri and I am a Computer Engineering major at NAU. My role on the team is helping to integrate hardware and software interfaces for our buggy."
+    "bio": ""
   },
   "lily": {
     "name": "Lily Quintanar",

@@ -53,8 +53,7 @@ function openTeamModal(data) {
   teamName.textContent = data.name;
   teamRoleOne.textContent = data.roleone;
   teamRoleTwo.textContent = data.roletwo;
-  //teamBio.textContent = data.bio; // TODO Repalce this when team submits bios
-  teamBio.textContent = ""; 
+  teamBio.textContent = data.bio;
 
   teamLinkedIn.href = data.linkedin || "#";
   teamLinkedIn.target = "_blank";
