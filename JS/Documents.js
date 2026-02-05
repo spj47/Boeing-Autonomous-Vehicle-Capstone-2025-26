@@ -191,8 +191,10 @@ async function fetchDocumentsData() {
   try {
     showSpinner();
 
+    // Making this always fail for the time being since the current fallback doesn't work for Boeing
     const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbz0aEzT4UXX9ZYukToveurjYK4rt4sptZ8NIyypu6U5mPfKsE2OKrfPKTnXPEKEfmKG/exec"
+      //"https://script.google.com/macros/s/AKfycbz0aEzT4UXX9ZYukToveurjYK4rt4sptZ8NIyypu6U5mPfKsE2OKrfPKTnXPEKEfmKG/exec"
+      "a"
     );
 
     if (!response.ok) throw new Error("Server fetch failed");
